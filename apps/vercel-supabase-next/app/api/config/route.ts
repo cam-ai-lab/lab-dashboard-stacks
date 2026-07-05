@@ -1,0 +1,5 @@
+import { environmentStatus } from "@dashboard/shared";
+
+export function GET(): Response {
+  return Response.json({ variables: environmentStatus(["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY", "SUPABASE_SERVICE_ROLE_KEY", "DASHBOARD_USER_ID", "MOCK_GITHUB_API_KEY", "MOCK_CALENDAR_API_KEY", "CRON_SECRET"], process.env) });
+}

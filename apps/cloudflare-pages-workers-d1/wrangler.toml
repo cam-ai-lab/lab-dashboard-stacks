@@ -1,0 +1,11 @@
+name = "dynamic-dashboard-cloudflare"
+main = "src/index.ts"
+compatibility_date = "2026-07-03"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dynamic-dashboard"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+[observability]
+enabled = true

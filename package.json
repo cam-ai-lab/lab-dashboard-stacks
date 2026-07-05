@@ -1,0 +1,25 @@
+{
+  "name": "dynamic-dashboard-stack-lab",
+  "private": true,
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev:cloudflare": "pnpm --filter cloudflare-pages-workers-d1 dev",
+    "dev:cloudrun": "pnpm --filter cloud-run-container-express dev",
+    "dev:firebase": "pnpm --filter firebase-hosting-functions dev",
+    "dev:netlify": "pnpm --filter netlify-functions-next dev",
+    "dev:railway": "pnpm --filter railway-express-postgres dev",
+    "dev:render": "pnpm --filter render-express-postgres dev",
+    "dev:replit": "pnpm --filter replit-express-sqlite dev",
+    "dev:vercel": "pnpm --filter vercel-supabase-next dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0"
+  }
+}

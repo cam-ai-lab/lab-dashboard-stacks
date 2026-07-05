@@ -1,0 +1,7 @@
+run = "pnpm --filter replit-express-sqlite dev"
+entrypoint = "apps/replit-express-sqlite/src/server.ts"
+
+[deployment]
+run = "pnpm --filter replit-express-sqlite start"
+build = "pnpm --filter replit-express-sqlite build"
+deploymentTarget = "autoscale"

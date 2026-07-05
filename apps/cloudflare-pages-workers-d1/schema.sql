@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS widgets (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  value TEXT NOT NULL,
+  source TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

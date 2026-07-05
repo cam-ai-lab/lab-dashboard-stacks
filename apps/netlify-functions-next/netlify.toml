@@ -1,0 +1,13 @@
+[build]
+command = "pnpm --filter netlify-functions-next build"
+publish = "apps/netlify-functions-next/dist"
+functions = "apps/netlify-functions-next/netlify/functions"
+
+[dev]
+command = "pnpm exec vite --config apps/netlify-functions-next/vite.config.ts"
+targetPort = 5173
+
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/:splat"
+status = 200

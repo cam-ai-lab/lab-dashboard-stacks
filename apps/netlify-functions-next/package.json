@@ -1,0 +1,24 @@
+{
+  "name": "netlify-functions-next",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "netlify dev --port 3002",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@dashboard/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^3.1.0",
+    "@types/node": "^22.0.0",
+    "netlify-cli": "^21.0.0",
+    "typescript": "^5.8.0",
+    "vite": "^6.2.0",
+    "vitest": "^3.1.0"
+  }
+}
