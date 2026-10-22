@@ -1,8 +1,12 @@
-# Dynamic Dashboard Stack Lab
+# lab-dashboard-stacks
 
-A pnpm monorepo implementing the same small dynamic personal dashboard on eight hosting stacks. The experiment compares developer experience, local tooling, persistence, secrets, jobs, observability, and deployment—not visual polish.
+Dynamic Dashboard Stack Lab: a pnpm monorepo implementing the same small dynamic personal dashboard on eight hosting stacks. The experiment compares developer experience, local tooling, persistence, secrets, jobs, observability, and deployment—not visual polish.
 
 Every app shows the same four seed widgets, can add a widget, simulates an external refresh, exposes health and safe configuration-status endpoints, and runs locally without cloud credentials.
+
+## Status
+
+active (lab). All eight stacks are implemented in a single commit (2026-07-05), 10/10 turbo test tasks green, and the comparison docs are written. No deploys yet, so the scorecard's deploy-experience columns are still empty. Stack: pnpm + turbo, TypeScript, one shared package.
 
 ## Stacks
 
@@ -41,6 +45,16 @@ pnpm dev:replit       # http://localhost:3008
 ```
 
 Render and Railway use process memory when `DATABASE_URL` is absent. To compare Postgres, start the app's Compose service, copy its `.env.example` to `.env`, and export or load `DATABASE_URL`. Firebase's full emulator suite requires Java. Cloudflare can use its configured local D1 binding; the other fallback stores need no external services.
+
+## Layout
+
+```
+apps/        # one app per stack: vercel-supabase-next, netlify-functions-next, cloudflare-pages-workers-d1,
+             # firebase-hosting-functions, render-express-postgres, railway-express-postgres,
+             # cloud-run-container-express, replit-express-sqlite (each with its own README)
+packages/shared/   # shared types, widgets, env checks, HTML shell and mock external APIs
+docs/        # architecture, comparison-scorecard, decision-matrix, experiment-log-template, low-code-notes
+```
 
 ## Common API
 
